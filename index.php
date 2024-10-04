@@ -60,7 +60,7 @@ do {
             echo PHP_EOL;
             echo "Existen 2 tipos de placas : [1] fotovoltaicas y [2] térmicas" . PHP_EOL;
             $bridge = (int) readline("Indiqué el tipo de la placa solar (1 o 2): ");
-            if($bridge = 1) {$kind == Kind::PV;} else {$kind == Kind::THERMAL;}
+            if($bridge == 1) {$kind = Kind::PV;} else {$kind = Kind::THERMAL;}
             echo PHP_EOL;
             $price = (float) readline("Indiqué el precio de la placa solar : ");
             echo PHP_EOL;
