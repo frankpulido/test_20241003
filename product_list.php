@@ -35,7 +35,7 @@ class ProductList {
     // Show List
     public function showList() : string {
         $reply = "";
-        $utility = $this->getProductList();
+        $utility = $this->productList;
         foreach($utility as $product){
             $reply = $reply . PHP_EOL . $product->__toString();
         }
@@ -44,14 +44,14 @@ class ProductList {
 
     // Add product
     public function addPlate(Plate $new) {
-        $utility = $this->getProductList();
+        $utility = $this->productList;
         $utility[] = $new;
         $this->setProductList($utility);
     }
 
     // Average Price
     public function avgPrice() : float {
-        $utility = $this->getProductList();
+        $utility = $this->productList;
         $prices = [];
         $avg = 0;
         foreach($utility as $product) {
@@ -64,7 +64,7 @@ class ProductList {
     // Filter by power no less than
     public function gtePower(float $minPower) : string {
         $filter = [];
-        $utility = $this->getProductList();
+        $utility = $this->productList;
         foreach($utility as $product) {
             if($product->getPower() >= $minPower) {$filter[] = $product;}
         }
